@@ -29,7 +29,7 @@ var preg = [
 		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 	]},
-	//Geografía
+		//Geografía
 	{categorias: 'Geografía', preguntas: [
 		{textoEnunciado: '¿Sabías cual de estas 2 playas tiene mayor longitud?', imagenCorrecta: 'playadelaconcha.jpg', imagenIncorrecta: 'playadelabarceloneta.jpg', incorrecta: 'Playa de la Barceloneta', correcta: 'Playa de La Concha', incorrectaExplicacion: '<span>¡Muy mal!</span> Es una de las más largas con una longitud de 1100 metros. Junto con la de San Splaya cercana) es una de las más antiguas y de mayor tradición de la ciudad y también una de las preferidas por los usuarios extranjeros.<span> Mientras que la playa de La Concha tiene una longitad de 1350m.</span>', correctaExplicacion: '<span>¡Muy bien!</span> Ubicada al oeste de la desembocadura del río Urumea, separada del mismo por el monte Urgull y alojada en la bahía de la Concha, tiene una longitud media de 1.350 m, una anchura media de 40 m y una superficie media de 54.000 m². <span>Mientras que la playa de la Barceloneta tiene una longitud de 1100m.', estado: false},
 		{textoEnunciado: '¿Sabías que oceano es mas profundo?', imagenCorrecta: 'Oceanoatlantico.jpg', imagenIncorrecta: 'Oceanopacifico.jpg', correcta: 'Ocenao Pacífico', incorrecta: 'Oceano Atlántico', incorrectaExplicacion: '<span>¡Muy mal!</span> El océano Atlántico es el océano que separa América, al oeste de Europa y África, al este. Tiene una profundidad maxima de 8 605 m (fosa de Puerto Rico). Se extiende desde el océano Ártico, en el norte, hasta el océano Antártico, en el sur. Es el segundo océano más extenso de la Tierra tras el océano Pacífico. <span> Mientras que el oceano Pacífico tiene una profundidad máxima de 10.924m </span>', correctaExplicacion: '<span>¡Muy bien!</span> El océano Pacífico es el mayor océano de la Tierra. Tiene una profundidad máxima de 10.924m (Abismo Challenger en la Fosa de las Marianas). Ocupa la tercera parte de su superficie y se extiende aproximadamente 15 000 km desde el mar de Bering limitando con el Ártico por el norte, hasta los márgenes congelados del mar de Ross y limitando por el sur con la Antártida. <span>Mientras que el oceano Atlantico tiene una profundidad de Máxima: 8 605 m (fosa de Puerto Rico).</span>', estado: false},
@@ -55,12 +55,18 @@ var preg = [
 		{textoEnunciado: '', imagenCorrecta: 'cabosanlucas.jpg', imagenIncorrecta: 'cabodehornos.jpg', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 		{textoEnunciado: '', imagenCorrecta: 'cabosanlucas.jpg', imagenIncorrecta: 'cabodehornos.jpg', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 	]},
+	//Todo
+	{categorias: 'Todo'},
 ];
 
 $(document).ready(function() {
 	a.addClass('animated bounceInLeft');
 	a.fadeTo('fast', 0.1);
 	a.mouseenter(categoria);
+	$('html, body').css({
+    overflow: 'auto',
+    height: 'auto'
+});
 	setTimeout(function(){ a.removeClass('animated bounceInLeft'); }, 1000);
 });
 
@@ -74,18 +80,31 @@ function categoria (){
 			a.addClass('animated bounceOutLeft');
 			$('#creador').addClass('animated bounceOutLeft');
 			b = preg[$(this).index()];
-			setTimeout(function(){
-				$('.flip').removeClass('flip');
-			}, 1500);
-			setTimeout(function(){
-				a.addClass('hidden');
-				preguntas();
-			}, 3000);
+			if (b.categorias == "Todo"){
+				setTimeout(function(){
+					$('.flip').removeClass('flip');
+				}, 1500);
+				setTimeout(function(){
+					a.addClass('hidden');
+					preguntas(todos = true);
+				}, 1500)
+			}else{
+				setTimeout(function(){
+					$('.flip').removeClass('flip');
+				}, 1500);
+				setTimeout(function(){
+					a.addClass('hidden');
+					preguntas(todos = false);
+				}, 3000);
+			}
 		}
 	});
 }
 
-function preguntas(){
+function preguntas(todos){
+	if (todos === true){
+		b = preg[Math.floor(Math.random()*4 + 0)];
+	}
 	if (x < 10) {
 		x++
 		c = Math.floor(Math.random()*10 + 0);
@@ -93,53 +112,104 @@ function preguntas(){
 			c = Math.floor(Math.random()*10 + 0);
 		}
 		b.preguntas[c].estado = true;
-		$('section.prueba').append('<h1>' + b.categorias + '</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight"><div id="correcta" class="juntos"><img class="marco2" src=img/' + b.preguntas[c].imagenCorrecta + '><p class="letra">&mdash;' + b.preguntas[c].correcta + '&mdash;</p></div><div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div></div>');
+		var elegir = '<div id="correcta" class="juntos"><img class="marco2" src=img/' + b.preguntas[c].imagenCorrecta + '><p class="letra">&mdash;' + b.preguntas[c].correcta + '&mdash;</p></div>'
+		var random = Math.floor(Math.random()*2 + 0);
+		if (random == 1) {
+			$('section.prueba').append('<h1>' + b.categorias + '</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight">' + elegir + '<div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div></div>');
 			$('img.marco2').one('click', function(event){
-			event.stopImmediatePropagation();
-			setTimeout(function(){
-				$('p.pregunta').removeClass('animated bounceInRight');
-				$('div.conjunto').removeClass('animated bounceInRight');
-			}, 1500);
-			if ($(this).attr('src') == 'img/' + b.preguntas[c].imagenCorrecta) {
-				$('#incorrecta').children().addClass('hidden');
-				$('#incorrecta').append('<div class="texto animated bounceInRight">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>');
+				event.stopImmediatePropagation();
 				setTimeout(function(){
 					$('p.pregunta').removeClass('animated bounceInRight');
-					$('div.conjunto').removeClass('animated bounceInRight')
-					$('#incorrecta').removeClass('animated bounceInRight')
+					$('div.conjunto').removeClass('animated bounceInRight');
 				}, 1500);
-				setTimeout(function(){
-					$('p.pregunta').addClass('animated bounceOutLeft');
-					$('div.conjunto').addClass('animated bounceOutLeft');
-					$('#incorrecta').addClass('animated bounceOutLeft');
-				}, 6000);
-				setTimeout(function(){
-					$('h1').remove();
-					$('p.pregunta').remove();
-					$('div.conjunto').remove();
-					preguntas();
-				}, 7000);
-			}else{
-				$('#correcta').children().addClass('hidden');
-				$('#correcta').append('<div class="texto animated bounceInLeft">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
+				if ($(this).attr('src') == 'img/' + b.preguntas[c].imagenCorrecta) {
+					$('#incorrecta').children().addClass('hidden');
+					$('#incorrecta').append('<div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>')
+					setTimeout(function(){
+						$('p.pregunta').removeClass('animated bounceInRight');
+						$('div.conjunto').removeClass('animated bounceInRight')
+						$('#incorrecta').removeClass('animated bounceInRight')
+					}, 1500);
+					setTimeout(function(){
+						$('p.pregunta').addClass('animated bounceOutLeft');
+						$('div.conjunto').addClass('animated bounceOutLeft');
+						$('#incorrecta').addClass('animated bounceOutLeft');
+					}, 6000);
+					setTimeout(function(){
+						$('h1').remove();
+						$('p.pregunta').remove();
+						$('div.conjunto').remove();
+						preguntas();
+					}, 7000);
+				}else{
+					$('#correcta').children().addClass('hidden');
+					$('#correcta').append('<div class="texto animated bounceInLeft">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
+					setTimeout(function(){
+						$('p.pregunta').removeClass('animated bounceInRight');
+						$('div.conjunto').removeClass('animated bounceInRight')
+						$('#correcta').removeClass('animated bounceInLeft')
+					}, 1500);
+					setTimeout(function(){
+						$('p.pregunta').addClass('animated bounceOutLeft');
+						$('div.conjunto').addClass('animated bounceOutLeft');
+						$('#incorrecta').addClass('animated bounceOutLeft');
+					}, 6000);
+					setTimeout(function(){
+						$('h1').remove();
+						$('p.pregunta').remove();
+						$('div.conjunto').remove();
+						preguntas();
+					}, 7000);
+				}
+			});
+		}else{
+			$('section.prueba').append('<h1>' + b.categorias + '</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight"><div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div>' + elegir + '</div>');
+			$('img.marco2').one('click', function(event){
 				setTimeout(function(){
 					$('p.pregunta').removeClass('animated bounceInRight');
-					$('div.conjunto').removeClass('animated bounceInRight')
-					$('#correcta').removeClass('animated bounceInLeft')
+					$('div.conjunto').removeClass('animated bounceInRight');
 				}, 1500);
-				setTimeout(function(){
-					$('p.pregunta').addClass('animated bounceOutLeft');
-					$('div.conjunto').addClass('animated bounceOutLeft');
-					$('#incorrecta').addClass('animated bounceOutLeft');
-				}, 6000);
-				setTimeout(function(){
-					$('h1').remove();
-					$('p.pregunta').remove();
-					$('div.conjunto').remove();
-					preguntas();
-				}, 7000);
-			}		
-		});
+				if ($(this).attr('src') == 'img/' + b.preguntas[c].imagenCorrecta) {
+					$('#incorrecta').children().addClass('hidden');
+					$('#incorrecta').append('<div class="texto animated bounceInRight">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>');
+					setTimeout(function(){
+						$('p.pregunta').removeClass('animated bounceInRight');
+						$('div.conjunto').removeClass('animated bounceInRight')
+						$('#incorrecta').removeClass('animated bounceInLeft')
+					}, 1500);
+					setTimeout(function(){
+						$('p.pregunta').addClass('animated bounceOutLeft');
+						$('div.conjunto').addClass('animated bounceOutLeft');
+						$('#incorrecta').addClass('animated bounceOutLeft');
+					}, 6000);
+					setTimeout(function(){
+						$('h1').remove();
+						$('p.pregunta').remove();
+						$('div.conjunto').remove();
+						preguntas();
+					}, 7000);
+				}else{
+					$('#correcta').children().addClass('hidden');
+					$('#correcta').append('<div class="texto animated bounceInLeft">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
+					setTimeout(function(){
+						$('p.pregunta').removeClass('animated bounceInRight');
+						$('div.conjunto').removeClass('animated bounceInRight')
+						$('#correcta').removeClass('animated bounceInRight')
+					}, 1500);
+					setTimeout(function(){
+						$('p.pregunta').addClass('animated bounceOutLeft');
+						$('div.conjunto').addClass('animated bounceOutLeft');
+						$('#incorrecta').addClass('animated bounceOutLeft');
+					}, 6000);
+					setTimeout(function(){
+						$('h1').remove();
+						$('p.pregunta').remove();
+						$('div.conjunto').remove();
+						preguntas();
+					}, 7000);
+				}
+			});
+		}
 	}else{
 		llamarCategoria();
 	}
@@ -148,11 +218,14 @@ function preguntas(){
 function llamarCategoria(){
 	x = 0;
 	a.removeClass('animated bounceOutLeft hidden');
-	a.addClass('animated bounceInLeft')
-	for (var i = 0; i < 10; i++) {
-		b.preguntas[i].estado = false;
+	a.addClass('animated bounceInLeft');
+	for (var i = 0; i < 4; i++) {
+		preg[i]
+		for (var h = 0; h < 10; h++) {
+			b.preguntas[h].estado = false;
+		}
 	}
 	setTimeout(function(){
-		a.removeClass('animated bounceInLeft')
+		a.removeClass('animated bounceInLeft');
 	}, 500);
 }
