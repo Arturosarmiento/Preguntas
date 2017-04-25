@@ -150,6 +150,11 @@ svg {
   -o-transform: scale(1);
 }
 /* efecto */
+
+audio {
+	background-color: black;
+}
+
 #contacto {
 	display: inline-block;
 	margin-top: .7em;
