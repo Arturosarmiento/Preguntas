@@ -5,29 +5,29 @@ var x = 0;
 var preg = [
 	//Naruraleza
 	{categorias: 'Naturaleza', preguntas: [
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false, },
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 	]},
 	//Deportes
 	{categorias: 'Deportes', preguntas: [
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagen1: '', imagen2: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Cuál es el país que ha ganado más medallas olímpicas de invierno en la historia?', imagenIncorrecta: '', imagenCorrecta: 'banderanoruega.png', correcta: 'Noruega', incorrecta: 'Esatdos Unidos', incorrectaExplicacion: '<span>¡Muy mal!</span> Contando las medallas otorgadas en los pasados JJ.OO de Londres, el país norteamericano lidera este ránking de los juegos de verano con 2.298 medallas en total (930 de oro, 730 de plata y 638 de bronce), seguido por Rusia (URSS) con un total de 1010 (395-319-296) y Reino Unido con 715 (236-255-253). Por su parte, España es 28ª en número de medallas con 130 en total (37-59-34). <span>Sin embargo, en lo que respecta a los JJ.OO de invierno la tendencia cambia, ya que el país con más medallas es Noruega con 303 (107-106-90), seguido por los EE.UU gracias a sus 253 preseas (87-95-71).</span>', correctaExplicacion: '<span>¡Muy bien!</span> Ha participado en 25 ediciones de los Juegos Olímpicos de Verano, su primera presencia tuvo lugar en París 1900. El país ha obtenido un total de 152 medallas en las ediciones de verano: 56 de oro, 49 de plata y 47 de bronce. <span>En los Juegos Olímpicos de Invierno ha participado en todas las ediciones (22 en total). El país ha conseguido un total de 329 medallas en las ediciones de invierno: 118 de oro, 111 de plata y 100 de bronce.</span>', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 	]},
 		//Geografía
 	{categorias: 'Geografía', preguntas: [
@@ -134,13 +134,13 @@ function preguntas(todos){
 						$('p.pregunta').addClass('animated bounceOutLeft');
 						$('div.conjunto').addClass('animated bounceOutLeft');
 						$('#incorrecta').addClass('animated bounceOutLeft');
-					}, 6000);
+					}, 13000);
 					setTimeout(function(){
 						$('h1').remove();
 						$('p.pregunta').remove();
 						$('div.conjunto').remove();
 						preguntas();
-					}, 7000);
+					}, 14000);
 				}else{
 					$('#correcta').children().addClass('hidden');
 					$('#correcta').append('<div class="texto animated bounceInLeft">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
@@ -153,13 +153,13 @@ function preguntas(todos){
 						$('p.pregunta').addClass('animated bounceOutLeft');
 						$('div.conjunto').addClass('animated bounceOutLeft');
 						$('#incorrecta').addClass('animated bounceOutLeft');
-					}, 6000);
+					}, 13000);
 					setTimeout(function(){
 						$('h1').remove();
 						$('p.pregunta').remove();
 						$('div.conjunto').remove();
 						preguntas();
-					}, 7000);
+					}, 14000);
 				}
 			});
 		}else{
@@ -171,7 +171,7 @@ function preguntas(todos){
 				}, 1500);
 				if ($(this).attr('src') == 'img/' + b.preguntas[c].imagenCorrecta) {
 					$('#incorrecta').children().addClass('hidden');
-					$('#incorrecta').append('<div class="texto animated bounceInRight">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>');
+					$('#incorrecta').append('<div class="texto animated bounceInLeft">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>');
 					setTimeout(function(){
 						$('p.pregunta').removeClass('animated bounceInRight');
 						$('div.conjunto').removeClass('animated bounceInRight')
@@ -181,16 +181,16 @@ function preguntas(todos){
 						$('p.pregunta').addClass('animated bounceOutLeft');
 						$('div.conjunto').addClass('animated bounceOutLeft');
 						$('#incorrecta').addClass('animated bounceOutLeft');
-					}, 6000);
+					}, 13000);
 					setTimeout(function(){
 						$('h1').remove();
 						$('p.pregunta').remove();
 						$('div.conjunto').remove();
 						preguntas();
-					}, 7000);
+					}, 14000);
 				}else{
 					$('#correcta').children().addClass('hidden');
-					$('#correcta').append('<div class="texto animated bounceInLeft">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
+					$('#correcta').append('<div class="texto animated bounceInRight">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
 					setTimeout(function(){
 						$('p.pregunta').removeClass('animated bounceInRight');
 						$('div.conjunto').removeClass('animated bounceInRight')
@@ -200,13 +200,13 @@ function preguntas(todos){
 						$('p.pregunta').addClass('animated bounceOutLeft');
 						$('div.conjunto').addClass('animated bounceOutLeft');
 						$('#incorrecta').addClass('animated bounceOutLeft');
-					}, 6000);
+					}, 13000);
 					setTimeout(function(){
 						$('h1').remove();
 						$('p.pregunta').remove();
 						$('div.conjunto').remove();
 						preguntas();
-					}, 7000);
+					}, 14000);
 				}
 			});
 		}
