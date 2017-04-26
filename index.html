@@ -16,19 +16,23 @@
     <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
     <title>¿Sabías que...</title>
   </head>
   <body>
-  <div>
-  <audio src="media/b.mp3" preload="auto" loop autoplay></audio>
+  <audio id="audio1"  src="media/b.mp3" preload="auto" loop></audio>
     <div class="container col-sm-12" id="cabecera">
-      <p class="cabe col-sm-4 col-xs-12"><a href="#"><img src="img/Sabias.png" alt=""></a><span class="paginaprincipal rotate">Página Principal</span></p>
+      <p class="cabe col-sm-4 col-xs-12"><a href="#"><img src="img/Sabias.png" alt=""></a>
+      <span class="paginaprincipal">Página Principal</span><button id="play" class="as" onclick="audioplay()">&gt;</button>
+      <span class="as">musica</span></p>
+      
       <p class="cabeceraa grow col-sm-4 col-xs-12">¿Sabías que...</p>
       <div id="contacto" class="col-sm-4 col-xs-12">
-        <a href="" class="grow"><img src="img/iconolinkedinrecortado.png" alt=""></a>
+        <a href="" class="grow bs"><img src="img/iconolinkedinrecortado.png" alt=""></a>
         <a href=""><img src="img/iconogithub.png" alt=""></a>
         <a href=""><img src="img/iconolinkedinrecortado.png" alt=""></a>
-        <span class="proyecto rotate">Contacto y proyecto</span>
+        <span class="proyecto rotate">Contacto y proyecto</span><br>
       </div>
     </div>
     <div class="padre">
