@@ -166,7 +166,6 @@ audio {
 	font-size: 1.2em;
 }
 .paginaprincipal {
-	width: 10em;
 	position: relative;
 	left: .3em;
 	bottom: 3em;
@@ -320,4 +319,12 @@ button {
 	width: auto;
 	margin-bottom: .3em;
 }
-/*prueba*/
+.quitarscroll {
+	overflow: hidden;
+}
+.paginaprincipal2 {
+	position: relative;
+	right: 7em;
+	bottom: 1.5em;
+	font-size: 1em;
+}
