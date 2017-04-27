@@ -277,12 +277,14 @@ section {
 	background-size: 100%;
 	border: 7px double gray;
 	border-radius: 10px;
-	width: 100%;
+	width: 90%;
 	font-size: 1.3em;
 	font-family: 'Palanquin Dark', sans-serif;
 	text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 	color: lightgray;
 	padding: 1em;
+	margin-right: 1em;
+	margin-left: 1em;
 }
 span {
 	font-size: 1em;
@@ -310,13 +312,12 @@ button {
 	bottom: 1.3em;
 }
 .categoria {
-	float: center;
-	align-items: center;
 	font-size: 3em;
 	color: white;
-	text-shadow: -2px -2px 1px black;
-	font-family: 'Anton', sans-serif;
-	margin-bottom: .5em;
+  text-shadow: 2px 2px 4px #000000;
+	font-family: 'Cormorant SC', serif;
+	background-color: transparent;
+	width: auto;
+	margin-bottom: .3em;
 }
-
 /*prueba*/
