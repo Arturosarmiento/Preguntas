@@ -67,10 +67,6 @@ $(document).ready(function() {
 	a.addClass('animated bounceInLeft');
 	a.fadeTo('fast', 0.1);
 	a.mouseenter(categoria);
-	$('html, body').css({
-    overflow: 'auto',
-    height: 'auto'
-});
 	setTimeout(function(){ a.removeClass('animated bounceInLeft'); }, 1000);
 });
 
