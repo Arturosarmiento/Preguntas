@@ -219,11 +219,11 @@ section {
   display: inline-block;
 }
 #marco {
-	border: 3px solid lightgray;
+	border: 3px solid white;
   border-radius: 10px;
 }
 .marco {
-	border: 3px solid lightgray;
+	border: 3px solid white;
   	border-radius: 10px;
 }
 .a {
@@ -258,7 +258,7 @@ section {
 	width: 50%;
 }
 .marco2 {
-	border: 3px solid gray;
+	border: 3px solid white;
   border-radius: 10px;
   width: 60%;
 }
