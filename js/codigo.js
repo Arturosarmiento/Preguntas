@@ -2,6 +2,7 @@ var a = $('section.prueba').children();
 var b;
 var c;
 var x = 0;
+var todos = false;
 var preg = [
 	//Naruraleza
 	{categorias: 'Naturaleza', preguntas: [
@@ -18,7 +19,7 @@ var preg = [
 	]},
 	//Deportes
 	{categorias: 'Deportes', preguntas: [
-		{textoEnunciado: '¿Cuál es el país que ha ganado más medallas olímpicas de invierno en la historia?', imagenIncorrecta: '', imagenCorrecta: 'banderanoruega.png', correcta: 'Noruega', incorrecta: 'Esatdos Unidos', incorrectaExplicacion: '<span>¡Muy mal!</span> Contando las medallas otorgadas en los pasados JJ.OO de Londres, el país norteamericano lidera este ránking de los juegos de verano con 2.298 medallas en total (930 de oro, 730 de plata y 638 de bronce), seguido por Rusia (URSS) con un total de 1010 (395-319-296) y Reino Unido con 715 (236-255-253). Por su parte, España es 28ª en número de medallas con 130 en total (37-59-34). <span>Sin embargo, en lo que respecta a los JJ.OO de invierno la tendencia cambia, ya que el país con más medallas es Noruega con 303 (107-106-90), seguido por los EE.UU gracias a sus 253 preseas (87-95-71).</span>', correctaExplicacion: '<span>¡Muy bien!</span> Ha participado en 25 ediciones de los Juegos Olímpicos de Verano, su primera presencia tuvo lugar en París 1900. El país ha obtenido un total de 152 medallas en las ediciones de verano: 56 de oro, 49 de plata y 47 de bronce. <span>En los Juegos Olímpicos de Invierno ha participado en todas las ediciones (22 en total). El país ha conseguido un total de 329 medallas en las ediciones de invierno: 118 de oro, 111 de plata y 100 de bronce.</span>', estado: false},
+		{textoEnunciado: '¿Sabías que país ha ganado más medallas olímpicas de invierno en la historia?', imagenIncorrecta: 'banderaestadosunidos.jpg', imagenCorrecta: 'banderanoruega.png', correcta: 'Noruega', incorrecta: 'Esatdos Unidos', incorrectaExplicacion: '<span>¡Muy mal!</span> Contando las medallas otorgadas en los pasados JJ.OO de Londres, el país norteamericano lidera este ránking de los juegos de verano con 2.298 medallas en total (930 de oro, 730 de plata y 638 de bronce), seguido por Rusia (URSS) con un total de 1010 (395-319-296) y Reino Unido con 715 (236-255-253). Por su parte, España es 28ª en número de medallas con 130 en total (37-59-34). <span>Sin embargo, en lo que respecta a los JJ.OO de invierno la tendencia cambia, ya que el país con más medallas es Noruega con 303 (107-106-90), seguido por los EE.UU gracias a sus 253 preseas (87-95-71).</span>', correctaExplicacion: '<span>¡Muy bien!</span> Ha participado en 25 ediciones de los Juegos Olímpicos de Verano, su primera presencia tuvo lugar en París 1900. El país ha obtenido un total de 152 medallas en las ediciones de verano: 56 de oro, 49 de plata y 47 de bronce. <span>En los Juegos Olímpicos de Invierno ha participado en todas las ediciones (22 en total). El país ha conseguido un total de 329 medallas en las ediciones de invierno: 118 de oro, 111 de plata y 100 de bronce.</span>', estado: false},
 		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
@@ -85,8 +86,9 @@ function categoria (){
 					$('.flip').removeClass('flip');
 				}, 1500);
 				setTimeout(function(){
+					todos = true;
 					a.addClass('hidden');
-					preguntas(todos = true);
+					preguntas();
 				}, 1500)
 			}else{
 				setTimeout(function(){
@@ -94,14 +96,14 @@ function categoria (){
 				}, 1500);
 				setTimeout(function(){
 					a.addClass('hidden');
-					preguntas(todos = false);
+					preguntas();
 				}, 3000);
 			}
 		}
 	});
 }
 
-function preguntas(todos){
+function preguntas(){
 	if (todos === true){
 		b = preg[Math.floor(Math.random()*4 + 0)];
 	}
@@ -112,22 +114,20 @@ function preguntas(todos){
 			c = Math.floor(Math.random()*10 + 0);
 		}
 		b.preguntas[c].estado = true;
-		var elegir = '<div id="correcta" class="juntos"><img class="marco2" src=img/' + b.preguntas[c].imagenCorrecta + '><p class="letra">&mdash;' + b.preguntas[c].correcta + '&mdash;</p></div>'
+		var elegir = '<div id="correcta" class="juntos"><img class="marco2" src=img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta + '><p class="letra">&mdash;' + b.preguntas[c].correcta + '&mdash;</p></div>'
 		var random = Math.floor(Math.random()*2 + 0);
 		if (random == 1) {
-			$('section.prueba').append('<h1 class="categoria">' + b.categorias + '</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight">' + elegir + '<div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div></div>');
+			$('section.prueba').append('<h1 class="categoria">' + b.categorias + '</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight">' + elegir + '<div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.categorias + '/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div></div>');
 			$('img.marco2').one('click', function(event){
 				event.stopImmediatePropagation();
 				setTimeout(function(){
 					$('p.pregunta').removeClass('animated bounceInRight');
 					$('div.conjunto').removeClass('animated bounceInRight');
 				}, 1500);
-				if ($(this).attr('src') == 'img/' + b.preguntas[c].imagenCorrecta) {
+				if ($(this).attr('src') == 'img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta){
 					$('#incorrecta').children().addClass('hidden');
 					$('#incorrecta').append('<div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>')
 					setTimeout(function(){
-						$('p.pregunta').removeClass('animated bounceInRight');
-						$('div.conjunto').removeClass('animated bounceInRight')
 						$('#incorrecta').removeClass('animated bounceInRight')
 					}, 1500);
 					setTimeout(function(){
@@ -143,11 +143,9 @@ function preguntas(todos){
 					}, 14000);
 				}else{
 					$('#correcta').children().addClass('hidden');
-					$('#correcta').append('<div class="texto animated bounceInLeft">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
+					$('#correcta').append('<div class="texto animated bounceInLeft"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
 					setTimeout(function(){
-						$('p.pregunta').removeClass('animated bounceInRight');
-						$('div.conjunto').removeClass('animated bounceInRight')
-						$('#correcta').removeClass('animated bounceInLeft')
+						$('#correcta').removeClass('animated bounceInLeft');
 					}, 1500);
 					setTimeout(function(){
 						$('p.pregunta').addClass('animated bounceOutLeft');
@@ -163,19 +161,17 @@ function preguntas(todos){
 				}
 			});
 		}else{
-			$('section.prueba').append('<h1 class="categoria">' + b.categorias + '</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight"><div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div>' + elegir + '</div>');
+			$('section.prueba').append('<h1 class="categoria">' + b.categorias + '</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight"><div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.categorias + '/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div>' + elegir + '</div>');
 			$('img.marco2').one('click', function(event){
 				setTimeout(function(){
 					$('p.pregunta').removeClass('animated bounceInRight');
 					$('div.conjunto').removeClass('animated bounceInRight');
 				}, 1500);
-				if ($(this).attr('src') == 'img/' + b.preguntas[c].imagenCorrecta) {
+				if ($(this).attr('src') == 'img/'  + b.categorias + '/' + b.preguntas[c].imagenCorrecta) {
 					$('#incorrecta').children().addClass('hidden');
-					$('#incorrecta').append('<div class="texto animated bounceInLeft">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>');
+					$('#incorrecta').append('<div class="texto animated bounceInLeft"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>');
 					setTimeout(function(){
-						$('p.pregunta').removeClass('animated bounceInRight');
-						$('div.conjunto').removeClass('animated bounceInRight')
-						$('#incorrecta').removeClass('animated bounceInLeft')
+						$('#incorrecta').removeClass('animated bounceInLeft');
 					}, 1500);
 					setTimeout(function(){
 						$('p.pregunta').addClass('animated bounceOutLeft');
@@ -190,11 +186,9 @@ function preguntas(todos){
 					}, 14000);
 				}else{
 					$('#correcta').children().addClass('hidden');
-					$('#correcta').append('<div class="texto animated bounceInRight">' + '<p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
+					$('#correcta').append('<div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
 					setTimeout(function(){
-						$('p.pregunta').removeClass('animated bounceInRight');
-						$('div.conjunto').removeClass('animated bounceInRight')
-						$('#correcta').removeClass('animated bounceInRight')
+						$('#correcta').removeClass('animated bounceInRight');
 					}, 1500);
 					setTimeout(function(){
 						$('p.pregunta').addClass('animated bounceOutLeft');
@@ -232,14 +226,13 @@ function llamarCategoria(){
 
 // MUSICA BOTON stop
 function audioplay() {
-       var audio = document.getElementById("audio1");
-       var button = document.getElementById("play");
-       if (audio.paused) {
-          audio.play();
-          button.textContent = "||";
-        
-       } else {
-          audio.pause();
-          button.textContent = ">";
-       }
-    }
+	var audio = document.getElementById("audio1");
+	var button = document.getElementById("play");
+	if (audio.paused) {
+		audio.play();
+		button.textContent = "||";
+	} else {
+		audio.pause();
+		button.textContent = ">";
+	}
+}
