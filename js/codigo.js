@@ -32,7 +32,7 @@ var preg = [
 		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
 		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías quien es el segundo con más títulos del campeonato del mundo de fórmula 1?', imagenIncorrecta: 'Sebastianvettel.jpg', imagenCorrecta: 'JuanManuelFangio.jpg', correcta: 'Juan Manuel Fangio', incorrecta: 'Sebastian Vettel', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Comenzando la temporada 2017, lleva acumuladas 43 victorias, 88 podios y 46 pole position. Es el cuarto piloto con más grandes premios ganados en la historia. Iguala a Alain Prost (4) en número de títulos mundiales, superado por Juan Manuel Fangio (5) y Michael Schumacher (7).', correctaExplicacion: '<span>¡Muy bien!</span> En 1947, con la colaboración del gobierno argentino, comenzó a participar en los Grandes Premios del continente europeo. Desde 1947 a 1958, compitió en Grandes Premios de manera oficial para las marcas Mercedes-Benz, Maserati, Alfa Romeo y Ferrari obteniendo cinco títulos mundiales y dos subcampeonatos.', estado: false},
 	]},
 		//Geografía
 	{categorias: 'Geografía', preguntas: [
@@ -62,6 +62,8 @@ var preg = [
 	]},
 	//Todo
 	{categorias: 'Todo'},
+	//Curiosidades
+	{categoria: 'Curiosidades'}
 ];
 
 $(document).ready(function() {
@@ -76,11 +78,12 @@ function categoria (){
 	$(this).fadeTo('fast', 1);
 	$(this).one('click', function(event){
 		event.stopImmediatePropagation();
-		if (a.addClass()[2].className == 'col-md-2 col-sm-4 col-xs-4 tamaño div-img'){
+		b = $(this).index();
+		if (a.addClass()[b].className === 'col-md-2 col-sm-4 col-xs-4 tamaño div-img'){
 			$(this).addClass('animated flip');
 			a.addClass('animated bounceOutLeft');
-			$('#creador').addClass('animated bounceOutLeft');
-			b = preg[$(this).index()];
+			$('#creador').addClass('animated bounceOutLeft hidden');
+			b = preg[b];
 			if (b.categorias == "Todo"){
 				setTimeout(function(){
 					$('.flip').removeClass('flip');
@@ -88,6 +91,7 @@ function categoria (){
 				setTimeout(function(){
 					todos = true;
 					a.addClass('hidden');
+					$('section.prueba').addClass('quitarscroll');
 					preguntas();
 				}, 1500)
 			}else{
@@ -96,15 +100,18 @@ function categoria (){
 				}, 1500);
 				setTimeout(function(){
 					a.addClass('hidden');
+					$('section.prueba').addClass('quitarscroll');
 					preguntas();
 				}, 3000);
 			}
+		}else{
+			alert('Acierta todas las preguntas de la categoría todos para desbloquear esta categoría')
+			llamarCategoria();
 		}
 	});
 }
 
 function preguntas(){
-	$('section.prueba').addClass('quitarscroll')
 	if(!(c == undefined)){
 		if (y == 'img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta){
 			contadorCorrecta++
@@ -151,12 +158,19 @@ function llamarCategoria(){
 	contadorCorrecta = 0;
 	contadorIncorrecta = 0;
 	a.removeClass('animated bounceOutLeft hidden');
+	$('#creador').removeClass('animated bounceOutLeft hidden');
 	a.addClass('animated bounceInLeft');
+	$('#creador').addClass('animated bounceInLeft');
 	$('section.prueba').removeClass('quitarscroll')
-	for (var i = 0; i < 4; i++) {
-		preg[i];
-		for (var h = 0; h < 10; h++) {
-			b.preguntas[h].estado = false;
+	if (!(b == Number(b))) {
+		for (var i = 0; i < 6; i++) {
+			if (i === 4) {
+				continue;
+			}
+			preg[i];
+			for (var h = 0; h < 10; h++) {
+				b.preguntas[h].estado = false;
+			}
 		}
 	}
 	b = '';
@@ -170,6 +184,10 @@ function puntuacion(){
 	$('section.prueba').append('<div class="conjunto animated bounceInRight"><div id="correcta" class="juntos"><div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p><p>&mdash; Correctas &mdash;</p>' + contadorCorrecta + '</div></div><div id="incorrecta" class="juntos"><div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p><p>&mdash; Incorrectas &mdash;</p>' + contadorIncorrecta + '</div></div></div>');
 	$('body').one('click', function(event){
 		event.stopImmediatePropagation();
+		if (contadorCorrecta == 20){
+			alert('Felicidades has desbloqueado la categoria curiosidades')
+			a.removeClass('disbale');
+		}
 		$('div.conjunto').removeClass('animated bounceInRight');
 		setTimeout(function(){
 			$('div.conjunto').addClass('animated bounceOutLeft')
