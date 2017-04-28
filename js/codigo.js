@@ -167,7 +167,7 @@ function llamarCategoria(){
 }
 
 function puntuacion(){
-	$('section.prueba').append('<div class="conjunto animated bounceInRight"><div id="correcta" class="juntos"><p class="letra">&mdash; Correctas &mdash;</p><span>' + contadorCorrecta + '</span></div><div id="incorrecta" class="juntos"><p class="letra">&mdash; Incorrectas &mdash;</p><span>' + contadorIncorrecta + '</span></div></div>');
+	$('section.prueba').append('<div class="conjunto animated bounceInRight"><div id="correcta" class="juntos"><div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p><p>&mdash; Correctas &mdash;</p>' + contadorCorrecta + '</div></div><div id="incorrecta" class="juntos"><div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p><p>&mdash; Incorrectas &mdash;</p>' + contadorIncorrecta + '</div></div></div>');
 	$('body').one('click', function(event){
 		event.stopImmediatePropagation();
 		$('div.conjunto').removeClass('animated bounceInRight');
