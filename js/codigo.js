@@ -162,7 +162,7 @@ function llamarCategoria(){
 	a.addClass('animated bounceInLeft');
 	$('#creador').addClass('animated bounceInLeft');
 	$('section.prueba').removeClass('quitarscroll')
-	if (!(b == Number(b))) {
+	if (isNaN(b)) {
 		for (var i = 0; i < 6; i++) {
 			if (i === 4) {
 				continue;
@@ -200,7 +200,6 @@ function puntuacion(){
 }
 
 function izquierda(){
-	var elegir = '<div id="correcta" class="juntos"><img class="marco2" src=img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta + '><p class="letra">&mdash;' + b.preguntas[c].correcta + '&mdash;</p></div>'
 	$('section.prueba').append('<h1 class="categoria">&mdash;' + b.categorias + '&mdash;</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight">' + elegir + '<div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.categorias + '/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div></div>');
 	$('img.marco2').one('click', function(event){
 		event.stopImmediatePropagation();
