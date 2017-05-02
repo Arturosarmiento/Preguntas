@@ -10,29 +10,29 @@ var elegir;
 var preg = [
 	//Naruraleza
 	{categorias: 'Naturaleza', preguntas: [
-		{textoEnunciado: '¿Sabías qué animal tiene mas patas? ', imagenIncorrecta: 'milpies.jpg', imagenCorrecta: 'plenipes.jpg', correcta: 'Illacme Plenipes', incorrecta: 'Mil Pies', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Fue una extraordinaria sorpresa que superara por tan poco a un milpiés puertorriqueño llamado Siphonophora millepeda, Aunque se crea que el milpíes es el animal con más patas no es así, ya que esta especie solo llega a las 742 patas. <span> Mientras otra especie, el Illacme plenipes, puede tener hasta 750 patas. </span>', correctaExplicacion: '<span>¡Muy bien!</span> Fue una extraordinaria sorpresa que superara por tan poco a un milpiés puertorriqueño llamado Siphonophora millepeda el Illacme plenipes, puede tener hasta 750 patas.<span> Mientras que el milpies solo llega a tener 742 patas.</span>', estado: false},
-		{textoEnunciado: '¿Sabías qué animal nada mas rápido?', imagenIncorrecta: 'pezvela.jpg', imagenCorrecta: 'tiburonmako.jpg', correcta: 'Tiburón Marrajo', incorrecta: 'Pez Vela', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Es una especie muy veloz,consiguiendo alcanzar de manera puntual los 110 km por hora. Tiene un largo de alrededor de 3 m, un peso de 100 kg y está considerado uno de los animales más elegantes dentro del océano. <span> Mientras que el tiburón marrajo llega a alcanzar los 124 km/h. </span>', correctaExplicacion: '<span>¡Muy bien!</span> El tiburón. La velocidad media de esta especie oscila entre los 8 y los 12km/h. Sin embargo, no todos los tiburones nadan a la misma velocidad, sino que depende de la especie a la que pertenezca. La especie más rápida de tiburones es el Mako, también conocido como marrajo común o de aleta corta, capaz de alcanzar los 124 km/h. <span> Mientras que el pez vela llega a alcanzar de manera puntual los 110 km por hora.</span>', estado: false},
+		{textoEnunciado: '¿Sabías qué animal tiene más patas? ', imagenIncorrecta: 'milpies.jpg', imagenCorrecta: 'plenipes.jpg', correcta: 'Illacme Plenipes', incorrecta: 'Mil Pies', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Fue una extraordinaria sorpresa que superara por tan poco a un milpiés puertorriqueño llamado Siphonophora millepeda, Aunque se crea que el milpíes es el animal con más patas no es así, ya que esta especie solo llega a las 742 patas. <span> Mientras otra especie, el Illacme plenipes, puede tener hasta 750 patas. </span>', correctaExplicacion: '<span>¡Muy bien!</span> Fue una extraordinaria sorpresa que superara por tan poco a un milpiés puertorriqueño llamado Siphonophora millepeda el Illacme plenipes, puede tener hasta 750 patas.<span> Mientras que el milpies solo llega a tener 742 patas.</span>', estado: false},
+		{textoEnunciado: '¿Sabías qué animal nada más rápido?', imagenIncorrecta: 'pezvela.jpg', imagenCorrecta: 'tiburonmako.jpg', correcta: 'Tiburón Marrajo', incorrecta: 'Pez Vela', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Es una especie muy veloz,consiguiendo alcanzar de manera puntual los 110 km por hora. Tiene un largo de alrededor de 3 m, un peso de 100 kg y está considerado uno de los animales más elegantes dentro del océano. <span> Mientras que el tiburón marrajo llega a alcanzar los 124 km/h. </span>', correctaExplicacion: '<span>¡Muy bien!</span> El tiburón. La velocidad media de esta especie oscila entre los 8 y los 12km/h. Sin embargo, no todos los tiburones nadan a la misma velocidad, sino que depende de la especie a la que pertenezca. La especie más rápida de tiburones es el Mako, también conocido como marrajo común o de aleta corta, capaz de alcanzar los 124 km/h. <span> Mientras que el pez vela llega a alcanzar de manera puntual los 110 km por hora.</span>', estado: false},
 		{textoEnunciado: '¿Sabías qué animal puede vivir mas años?', imagenIncorrecta: 'almeja.jpg', imagenCorrecta: 'turri.jpg', correcta: 'Medusa Turritopsis Nutricula', incorrecta: 'Almeja oceánica', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Un molusco marino nativo del Atlántico Norte de 8 cm de largo, es el animal más longevo de la historia, con una edad estimada de 507 años. Sus descubridores le llamaron Ming, inspirados por la famosa dinastía china reinante cuando la criatura nació.<span> Mientras que Medusa Turritopsis Nutricula es el único organismo capaz de rejuvenecerse a sí mismo para revertir su ciclo de vida. </span>', correctaExplicacion: '<span>¡Muy bien!</span> También se conoce como la Medusa Inmortal, ya que, al parecer, es el único organismo capaz de rejuvenecerse a sí mismo. En caso de peligro o condiciones adversas, se las arregla para revertir su ciclo de vida, es decir, vuelve a un estado juvenil en un proceso que puede continuar indefinidamente.<span> Mientras que el la Almeja oceánica muere a una edad estimada de 507 años.</span>', estado: false},
-		{textoEnunciado: '¿Sabías qué planta es la mas venenosa del mundo?', imagenIncorrecta: 'maculata.jpg', imagenCorrecta: 'aldefa.jpg', correcta: 'Aldefa (Nerium oleander)', incorrecta: 'Cicuta (cicuta matulata)', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Es considerada la planta más venenosa del continente Americano. Quienes sobreviven el envenenamiento de la cicuta experimentan condiciones a largo plazo como amnesia. Síntomas: convulsiones violentas y dolorosas, náuseas, vómitos, calambres y temblores musculares.', correctaExplicacion: '<span>¡Muy bien!</span> Consdierada la planta más venenosa del mundo. Es tan potente, que incluso la miel creada a partir de su nectar puede matar a una persona. Síntomas: diarrea, vómitos, dolor de estómago intenso, somnolencia, mareos, latidos irregulares del corazón, y a menudo, la muerte.<span> Mientras que la planta cicuta (cicuta matulata) solo es considerada la planta más venenosa del continente Americano.</span>', estado: false},
-		{textoEnunciado: '¿Sabías qué desierto es mas grande? ', imagenIncorrecta: 'sahara.jpg', imagenCorrecta: 'antartico.jpg', correcta: 'Desierto ANTÁRTICO', incorrecta: 'Desierto del SÁHARA', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Ocupando toda la franja norte del continente africano se extiende el Sáhara, el desierto cálido más grande del mundo. Marruecos, el Sáhara Occidental, Mauritania, Argelia, Túnez, Mali, Niger, Libia, Chad y Egipto son los países a los que el “desierto de desiertos” domina en mayor o menor medida. El paisaje saharaui es muy diverso, hay zonas con grandes dunas que pueden superar los 180 metros, tiene una spuerficie de 9.065.253 km².<span> Mientras que el Desierto Antártico tiene una superficie de 13.726.937 km².</span>', correctaExplicacion: '<span>¡Muy bien!</span> Es difícil concebir que el desierto más grande del mundo sea la Antártida. Sin embargo, el “continente helado” se trata del territorio más frío, seco y ventoso de todos los que configuran La Tierra. En la Antártida apenas llueve, la pluviosidad en la altiplanicie interior ronda los 50 mm. al año, mientras que en la costa caen unos 200 mm de agua, con una superficie de 13.726.937 km².<span> Mientras que el desierto de Sáhara tiene un superficie de 9.065.253 km².</span>', estado: false},
-		{textoEnunciado: '¿Sabías que arbol es mas atiguo?', imagenIncorrecta: 'abarkooh.jpg', imagenCorrecta: 'matusalen.jpg', correcta: 'Matusalén', incorrecta: 'Sarv-e-Abarkooh', incorrectaExplicacion: '<span>¡Uy lo siento!</span>En la tierra de Abarkooh, Iran, existe un ciprés muy antiguo: tiene 4000 años de edad, aunque haya quien le pone 4,500 años. Tiene una importancia fuerte para la gente de Iran, y le visitan personas de todo el mundo.  Es posiblemente el árbol más antiguo del medio oriente.<span> Mientras que el arbol Matusalén tiene 4.765 años de edad.</span>', correctaExplicacion: '<span>¡Muy bien!</span> El árbol vivo más antiguo sobre la tierra se llama Matusalén. Es nombrado por la figura bíblica Matusalén, que según fuentes sagrados vivió hasta las 969 años.  Esta situado en las montañas del White Mountains, California, cerca de Nevada. Es un pino. Un cálculo de su edad basado sobre un estudio de los anillos en su tronco afirma que tiene 4.765 años de edad. <span> Mientras que el arbol Sarv-e-Abarkooh tiene 4000 años de edad.</span>', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué planta es la más venenosa del mundo?', imagenIncorrecta: 'maculata.jpg', imagenCorrecta: 'aldefa.jpg', correcta: 'Aldefa (Nerium oleander)', incorrecta: 'Cicuta (cicuta matulata)', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Es considerada la planta más venenosa del continente Americano. Quienes sobreviven el envenenamiento de la cicuta experimentan condiciones a largo plazo como amnesia. Síntomas: convulsiones violentas y dolorosas, náuseas, vómitos, calambres y temblores musculares.', correctaExplicacion: '<span>¡Muy bien!</span> Consdierada la planta más venenosa del mundo. Es tan potente, que incluso la miel creada a partir de su nectar puede matar a una persona. Síntomas: diarrea, vómitos, dolor de estómago intenso, somnolencia, mareos, latidos irregulares del corazón, y a menudo, la muerte.<span> Mientras que la planta cicuta (cicuta matulata) solo es considerada la planta más venenosa del continente Americano.</span>', estado: false},
+		{textoEnunciado: '¿Sabías qué desierto es más grande? ', imagenIncorrecta: 'sahara.jpg', imagenCorrecta: 'antartico.jpg', correcta: 'Desierto ANTÁRTICO', incorrecta: 'Desierto del SÁHARA', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Ocupando toda la franja norte del continente africano se extiende el Sáhara, el desierto cálido más grande del mundo. Marruecos, el Sáhara Occidental, Mauritania, Argelia, Túnez, Mali, Niger, Libia, Chad y Egipto son los países a los que el “desierto de desiertos” domina en mayor o menor medida. El paisaje saharaui es muy diverso, hay zonas con grandes dunas que pueden superar los 180 metros, tiene una spuerficie de 9.065.253 km².<span> Mientras que el Desierto Antártico tiene una superficie de 13.726.937 km².</span>', correctaExplicacion: '<span>¡Muy bien!</span> Es difícil concebir que el desierto más grande del mundo sea la Antártida. Sin embargo, el “continente helado” se trata del territorio más frío, seco y ventoso de todos los que configuran La Tierra. En la Antártida apenas llueve, la pluviosidad en la altiplanicie interior ronda los 50 mm. al año, mientras que en la costa caen unos 200 mm de agua, con una superficie de 13.726.937 km².<span> Mientras que el desierto de Sáhara tiene un superficie de 9.065.253 km².</span>', estado: false},
+		{textoEnunciado: '¿Sabías qué arbol es más antiguo?', imagenIncorrecta: 'abarkooh.jpg', imagenCorrecta: 'matusalen.jpg', correcta: 'Matusalén', incorrecta: 'Sarv-e-Abarkooh', incorrectaExplicacion: '<span>¡Uy lo siento!</span>En la tierra de Abarkooh, Iran, existe un ciprés muy antiguo: tiene 4000 años de edad, aunque haya quien le pone 4,500 años. Tiene una importancia fuerte para la gente de Iran, y le visitan personas de todo el mundo.  Es posiblemente el árbol más antiguo del medio oriente.<span> Mientras que el arbol Matusalén tiene 4.765 años de edad.</span>', correctaExplicacion: '<span>¡Muy bien!</span> El árbol vivo más antiguo sobre la tierra se llama Matusalén. Es nombrado por la figura bíblica Matusalén, que según fuentes sagrados vivió hasta las 969 años.  Esta situado en las montañas del White Mountains, California, cerca de Nevada. Es un pino. Un cálculo de su edad basado sobre un estudio de los anillos en su tronco afirma que tiene 4.765 años de edad. <span> Mientras que el arbol Sarv-e-Abarkooh tiene 4000 años de edad.</span>', estado: false},
+		{textoEnunciado: '¿Sabías qué parque nacional tiene mas superficie?', imagenIncorrecta: 'per.jpg', imagenCorrecta: 'ast.jpg', correcta: 'Parque Nacional de Picos de Europa', incorrecta: 'Parque Nacional de Ordesa y Monte Perdido', incorrectaExplicacion: '<span>¡Uy lo siento!</span> El Parque Nacional de Ordesa y Monte Perdido tiene más títulos que un catedrático: Patrimonio de la Humanidad, Reserva de la Biosfera, Zona de especial protección para las aves, Diploma Europeo. Sus 15.608 hectáreas de impresionantes paisajes los merecen justamente.<span> Mientras que el Parque Nacional de Picos de Europa tiene 64.000 mil hectáreas de superficie.</span>', correctaExplicacion: '<span>¡Muy bien!</span> Asturias, León y Cantabria comparten desde 1918 el que fuera primer parque nacional de España. Casi 90 años después de su bautismo como zona protegida, este hábitat de osos pardos y urogallos sigue siendo uno de los puntos más visitados de la cordillera cantábrica, y el segundo parque nacional en visitas solo por debajo del Parque Nacional del Teide.<span> Mientras que el tiene Parque Nacional de Ordesa y Monte Perdido tiene 15.608 hectáreas de superficie. </span>', estado: false},
+		{textoEnunciado: '¿Sabías qué montaña es más peligrosa?', imagenIncorrecta: 'k2.jpg', imagenCorrecta: 'annapurna.jpg', correcta: 'Annapurna', incorrecta: 'K2', incorrectaExplicacion: '<span>¡Uy lo siento!</span> La segunda montaña más alta del planeta es reconocida por los escaladores como la más difícil del mundo en cuanto a técnica. Incluso en las rutas más fáciles, los ascensos requieren cruzar glaciares complicados, subir por paredes rocosas empinadas, e improvisar un camino a través de pilares de hielo, llamados seracs, que son propensos a colapsar sin aviso previo.<span> Mientras que el Annapurna es las más peligrosa estadisticamente hablando con 53 muertos hasta ahora.</span>', correctaExplicacion: '<span>¡Muy bien!</span> Desde el primer ascenso en 1950, Annapurna ha sido escalada por más de 130 personas, pero 53 han muerto intentándolo. Esta tasa de mortalidad convierte a Annapurna, la décima montaña más alta del planeta, en la más peligrosa estadísticamente.<span> Mientras que el K2 es la más difícil del mundo en cuanto a técnica.</span>', estado: false},
+		{textoEnunciado: '¿Sabías qué río es más largo?', imagenIncorrecta: 'nilo.jpg', imagenCorrecta: 'amazonas.jpg', correcta: 'Río Amazonas', incorrecta: 'Rio Nilo', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Ha sido considerado históricamente como el río más largo del mundo, sin embargo recientes estudios dan esta categoría al río Amazonas. Se localiza al noreste de África. De su principal fuente, el lago Victoria en África central, el río Nilo fluye hasta el mar Mediterráneo a través de Uganda, Sudán y Egipto.<span> Mientras que el rio Amazonas tiene 7,020 km de longitud.</span>', correctaExplicacion: '<span>¡Muy bien!</span> Es un gran río sudamericano, y es el río más largo del planeta y transporta él solo una quinta parte del agua fluvial del planeta. Recorre el bosque tropical húmedo más grande del planeta, distinguido con el nombre genérico de Amazonía o selva amazónica una de las maravillas naturales del mundo.<span> Mientras que el río Nilo tiene 6,671 km de longitud.</span>', estado: false},
+		{textoEnunciado: '¿Sabías en qué lugar ha llóvido mas en un año?', imagenIncorrecta: 'maws.jpg', imagenCorrecta: 'lloro.jpg', correcta: 'Lloró, Chocó, Colombia', incorrecta: 'Mawsynram y Cherrapunji, India', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Debido a las lluvias del monzón, entre Junio y Agosto, esta zona al Noreste de la India recoge grandes cantidades de lluvia, con registros en Mawsynram de 11877 mm.<span> Mientras que en Lloró, Chocó, Colombia ostenta el record mundial con 13299 mm de lluvia al año.</span>', correctaExplicacion: '<span>¡Muy bien!</span> Según fuentes del año 2000, ostenta el record mundial con 13299 mm de lluvia al año.<span> Mientras que en Mawsynram tiene registros de 11877 mm de lluvía al año. </span>', estado: false},
 	]},
 	//Deportes
 	{categorias: 'Deportes', preguntas: [
 		{textoEnunciado: '¿Sabías qué país ha ganado más medallas olímpicas de invierno en la historia?', imagenIncorrecta: 'banderaestadosunidos.jpg', imagenCorrecta: 'banderanoruega.png', correcta: 'Noruega', incorrecta: 'Esatdos Unidos', incorrectaExplicacion: '<span>¡Muy mal!</span> Contando las medallas otorgadas en los pasados JJ.OO de Londres, el país norteamericano lidera este ránking de los juegos de verano con 2.298 medallas en total (930 de oro, 730 de plata y 638 de bronce), seguido por Rusia (URSS) con un total de 1010 (395-319-296) y Reino Unido con 715 (236-255-253). Por su parte, España es 28ª en número de medallas con 130 en total (37-59-34). <span>Sin embargo, en lo que respecta a los JJ.OO de invierno la tendencia cambia, ya que el país con más medallas es Noruega con 303 (107-106-90), seguido por los EE.UU gracias a sus 253 preseas (87-95-71).</span>', correctaExplicacion: '<span>¡Muy bien!</span> Ha participado en 25 ediciones de los Juegos Olímpicos de Verano, su primera presencia tuvo lugar en París 1900. El país ha obtenido un total de 152 medallas en las ediciones de verano: 56 de oro, 49 de plata y 47 de bronce. <span>En los Juegos Olímpicos de Invierno ha participado en todas las ediciones (22 en total). El país ha conseguido un total de 329 medallas en las ediciones de invierno: 118 de oro, 111 de plata y 100 de bronce.</span>', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
-		{textoEnunciado: '', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías qué', imagenIncorrecta: '', imagenCorrecta: '', correcta: '', incorrecta: '', incorrectaExplicacion: '', correctaExplicacion: '', estado: false},
+		{textoEnunciado: '¿Sabías quien es el segundo con más títulos del campeonato del mundo de fórmula 1?', imagenIncorrecta: 'Sebastianvettel.jpg', imagenCorrecta: 'JuanManuelFangio.jpg', correcta: 'Juan Manuel Fangio', incorrecta: 'Sebastian Vettel', incorrectaExplicacion: '<span>¡Uy lo siento!</span> Comenzando la temporada 2017, lleva acumuladas 43 victorias, 88 podios y 46 pole position. Es el cuarto piloto con más grandes premios ganados en la historia. Iguala a Alain Prost (4) en número de títulos mundiales, superado por Juan Manuel Fangio (5) y Michael Schumacher (7).', correctaExplicacion: '<span>¡Muy bien!</span> En 1947, con la colaboración del gobierno argentino, comenzó a participar en los Grandes Premios del continente europeo. Desde 1947 a 1958, compitió en Grandes Premios de manera oficial para las marcas Mercedes-Benz, Maserati, Alfa Romeo y Ferrari obteniendo cinco títulos mundiales y dos subcampeonatos.', estado: false},
 	]},
 		//Geografía
 	{categorias: 'Geografía', preguntas: [
@@ -62,6 +62,8 @@ var preg = [
 	]},
 	//Todo
 	{categorias: 'Todo'},
+	//Curiosidades
+	{categoria: 'Curiosidades'}
 ];
 
 $(document).ready(function() {
@@ -76,11 +78,12 @@ function categoria (){
 	$(this).fadeTo('fast', 1);
 	$(this).one('click', function(event){
 		event.stopImmediatePropagation();
-		if (a.addClass()[2].className == 'col-md-2 col-sm-4 col-xs-4 tamaño div-img'){
+		b = $(this).index();
+		if (a.addClass()[b].className === 'col-md-2 col-sm-4 col-xs-4 tamaño div-img'){
 			$(this).addClass('animated flip');
 			a.addClass('animated bounceOutLeft');
-			$('#creador').addClass('animated bounceOutLeft');
-			b = preg[$(this).index()];
+			$('#creador').addClass('animated bounceOutLeft hidden');
+			b = preg[b];
 			if (b.categorias == "Todo"){
 				setTimeout(function(){
 					$('.flip').removeClass('flip');
@@ -88,6 +91,7 @@ function categoria (){
 				setTimeout(function(){
 					todos = true;
 					a.addClass('hidden');
+					$('section.prueba').addClass('quitarscroll');
 					preguntas();
 				}, 1500)
 			}else{
@@ -96,15 +100,18 @@ function categoria (){
 				}, 1500);
 				setTimeout(function(){
 					a.addClass('hidden');
+					$('section.prueba').addClass('quitarscroll');
 					preguntas();
 				}, 3000);
 			}
+		}else{
+			alert('Acierta todas las preguntas de la categoría todos para desbloquear esta categoría')
+			llamarCategoria();
 		}
 	});
 }
 
 function preguntas(){
-	$('section.prueba').addClass('quitarscroll')
 	if(!(c == undefined)){
 		if (y == 'img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta){
 			contadorCorrecta++
@@ -151,12 +158,19 @@ function llamarCategoria(){
 	contadorCorrecta = 0;
 	contadorIncorrecta = 0;
 	a.removeClass('animated bounceOutLeft hidden');
+	$('#creador').removeClass('animated bounceOutLeft hidden');
 	a.addClass('animated bounceInLeft');
+	$('#creador').addClass('animated bounceInLeft');
 	$('section.prueba').removeClass('quitarscroll')
-	for (var i = 0; i < 4; i++) {
-		preg[i];
-		for (var h = 0; h < 10; h++) {
-			b.preguntas[h].estado = false;
+	if (isNaN(b)) {
+		for (var i = 0; i < 6; i++) {
+			if (i === 4) {
+				continue;
+			}
+			preg[i];
+			for (var h = 0; h < 10; h++) {
+				b.preguntas[h].estado = false;
+			}
 		}
 	}
 	b = '';
@@ -167,9 +181,13 @@ function llamarCategoria(){
 }
 
 function puntuacion(){
-	$('section.prueba').append('<div class="conjunto animated bounceInRight"><div id="correcta" class="juntos"><p class="letra">&mdash; Correctas &mdash;</p><span>' + contadorCorrecta + '</span></div><div id="incorrecta" class="juntos"><p class="letra">&mdash; Incorrectas &mdash;</p><span>' + contadorIncorrecta + '</span></div></div>');
+	$('section.prueba').append('<div class="conjunto animated bounceInRight"><div id="correcta" class="juntos"><div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p><p>&mdash; Correctas &mdash;</p>' + '<p class="resul">' + contadorCorrecta + '</p>' + '</div></div><div id="incorrecta" class="juntos"><div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p><p>&mdash; Incorrectas &mdash;</p>' + '<p class="resul">' + contadorIncorrecta + '</p>' + '</div></div></div>');
 	$('body').one('click', function(event){
 		event.stopImmediatePropagation();
+		if (contadorCorrecta == 20){
+			alert('Felicidades has desbloqueado la categoria curiosidades')
+			a.removeClass('disbale');
+		}
 		$('div.conjunto').removeClass('animated bounceInRight');
 		setTimeout(function(){
 			$('div.conjunto').addClass('animated bounceOutLeft')
@@ -182,7 +200,6 @@ function puntuacion(){
 }
 
 function izquierda(){
-	var elegir = '<div id="correcta" class="juntos"><img class="marco2" src=img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta + '><p class="letra">&mdash;' + b.preguntas[c].correcta + '&mdash;</p></div>'
 	$('section.prueba').append('<h1 class="categoria">&mdash;' + b.categorias + '&mdash;</h1><p class="pregunta animated bounceInRight">' + b.preguntas[c].textoEnunciado + '</p><div class="conjunto animated bounceInRight">' + elegir + '<div id="incorrecta" class="juntos"><img class="marco2" src=img/' + b.categorias + '/' + b.preguntas[c].imagenIncorrecta + '><p class="letra">&mdash;' + b.preguntas[c].incorrecta + '&mdash;</p></div></div>');
 	$('img.marco2').one('click', function(event){
 		event.stopImmediatePropagation();
