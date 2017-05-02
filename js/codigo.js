@@ -163,11 +163,11 @@ function llamarCategoria(){
 	$('#creador').addClass('animated bounceInLeft');
 	$('section.prueba').removeClass('quitarscroll')
 	if (isNaN(b)) {
-		for (var i = 0; i < 6; i++) {
+		for (var i = 0; i < 4; i++) {
 			if (i === 4) {
 				continue;
 			}
-			preg[i];
+			b = preg[i];
 			for (var h = 0; h < 10; h++) {
 				b.preguntas[h].estado = false;
 			}
@@ -177,7 +177,7 @@ function llamarCategoria(){
 	c = undefined;
 	setTimeout(function(){
 		a.removeClass('animated bounceInLeft');
-	}, 500);
+	}, 1500);
 }
 
 function puntuacion(){
@@ -207,41 +207,41 @@ function izquierda(){
 		setTimeout(function(){
 			$('p.pregunta').removeClass('animated bounceInRight');
 			$('div.conjunto').removeClass('animated bounceInRight');
-		}, 500);
-		if ($(this).attr('src') == 'img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta){
+		}, 1500);
+		if (y == 'img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta){
 			$('#incorrecta').children().addClass('hidden');
 			$('#incorrecta').append('<div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>')
 			setTimeout(function(){
 				$('#incorrecta').removeClass('animated bounceInRight')
-			}, 500);
+			}, 3000);
 			setTimeout(function(){
 				$('p.pregunta').addClass('animated bounceOutLeft');
 				$('div.conjunto').addClass('animated bounceOutLeft');
 				$('#incorrecta').addClass('animated bounceOutLeft');
-			}, 500);
+			}, 20000);
 			setTimeout(function(){
 				$('h1').remove();
 				$('p.pregunta').remove();
 				$('div.conjunto').remove();
 				preguntas();
-			}, 500);
+			}, 21500);
 		}else{
 			$('#correcta').children().addClass('hidden');
 			$('#correcta').append('<div class="texto animated bounceInLeft"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
 			setTimeout(function(){
 				$('#correcta').removeClass('animated bounceInLeft');
-			}, 500);
+			}, 3000);
 			setTimeout(function(){
 				$('p.pregunta').addClass('animated bounceOutLeft');
 				$('div.conjunto').addClass('animated bounceOutLeft');
 				$('#incorrecta').addClass('animated bounceOutLeft');
-			}, 500);
+			}, 20000);
 			setTimeout(function(){
 				$('h1').remove();
 				$('p.pregunta').remove();
 				$('div.conjunto').remove();
 				preguntas();
-			}, 500);
+			}, 21500);
 		}
 	});
 }
@@ -254,41 +254,41 @@ function derecha(){
 		setTimeout(function(){
 			$('p.pregunta').removeClass('animated bounceInRight');
 			$('div.conjunto').removeClass('animated bounceInRight');
-		}, 500);
-		if ($(this).attr('src') == 'img/'  + b.categorias + '/' + b.preguntas[c].imagenCorrecta) {
+		}, 1500);
+		if (y == 'img/' + b.categorias + '/' + b.preguntas[c].imagenCorrecta) {
 			$('#incorrecta').children().addClass('hidden');
 			$('#incorrecta').append('<div class="texto animated bounceInLeft"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].correctaExplicacion + '</div>');
 			setTimeout(function(){
 				$('#incorrecta').removeClass('animated bounceInLeft');
-			}, 500);
+			}, 3000);
 			setTimeout(function(){
 				$('p.pregunta').addClass('animated bounceOutLeft');
 				$('div.conjunto').addClass('animated bounceOutLeft');
 				$('#incorrecta').addClass('animated bounceOutLeft');
-			}, 500);
+			}, 21000);
 			setTimeout(function(){
 				$('h1').remove();
 				$('p.pregunta').remove();
 				$('div.conjunto').remove();
 				preguntas();
-			}, 500);
+			}, 21500);
 		}else{
 			$('#correcta').children().addClass('hidden');
 			$('#correcta').append('<div class="texto animated bounceInRight"><p class="cabeceraa2 grow">¿Sabías que...</p>' + b.preguntas[c].incorrectaExplicacion + '</div>');
 			setTimeout(function(){
 				$('#correcta').removeClass('animated bounceInRight');
-			}, 500);
+			}, 3000);
 			setTimeout(function(){
 				$('p.pregunta').addClass('animated bounceOutLeft');
 				$('div.conjunto').addClass('animated bounceOutLeft');
 				$('#incorrecta').addClass('animated bounceOutLeft');
-			}, 500);
+			}, 21000);
 			setTimeout(function(){
 				$('h1').remove();
 				$('p.pregunta').remove();
 				$('div.conjunto').remove();
 				preguntas();
-			}, 500);
+			}, 21500);
 		}
 	});
 }
@@ -306,22 +306,21 @@ function audioplay() {
 	}
 }
 
-function alertDGC(mensaje)
-{
-    var dgcTiempo=500
-    var ventanaCS='<div class="dgcAlert"><div class="dgcVentana"><div class="dgcCerrar"></div><div class="dgcMensaje">'+mensaje+'<br><div class="dgcAceptar">Aceptar</div></div></div></div>';
-    $('body').append(ventanaCS);
-    var alVentana=$('.dgcVentana').height();
-    var alNav=$(window).height();
-    var supNav=$(window).scrollTop();
-    $('.dgcAlert').css('height',$(document).height());
-    $('.dgcVentana').css('top',((alNav-alVentana)/2+supNav-100)+'px');
-    $('.dgcAlert').css('display','block');
-    $('.dgcAlert').animate({opacity:1},dgcTiempo);
-    $('.dgcCerrar,.dgcAceptar').click(function(e) {
-        $('.dgcAlert').animate({opacity:0},dgcTiempo);
-        setTimeout("$('.dgcAlert').remove()",dgcTiempo);
-    });
+function alertDGC(mensaje){
+  var dgcTiempo=500
+  var ventanaCS='<div class="dgcAlert"><div class="dgcVentana"><div class="dgcCerrar"></div><div class="dgcMensaje">'+mensaje+'<br><div class="dgcAceptar">Aceptar</div></div></div></div>';
+  $('body').append(ventanaCS);
+  var alVentana=$('.dgcVentana').height();
+  var alNav=$(window).height();
+  var supNav=$(window).scrollTop();
+  $('.dgcAlert').css('height',$(document).height());
+  $('.dgcVentana').css('top',((alNav-alVentana)/2+supNav-100)+'px');
+  $('.dgcAlert').css('display','block');
+  $('.dgcAlert').animate({opacity:1},dgcTiempo);
+  $('.dgcCerrar,.dgcAceptar').click(function(e) {
+    $('.dgcAlert').animate({opacity:0},dgcTiempo);
+    setTimeout("$('.dgcAlert').remove()",dgcTiempo);
+  });
 }
 window.alert = function (message) {
   alertDGC(message);
