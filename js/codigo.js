@@ -105,7 +105,7 @@ function categoria (){
 				}, 3000);
 			}
 		}else{
-			alert('Acierta todas las preguntas de la categoría todos para desbloquear esta categoría')
+			alert('<img src="img/Sabias.png"><hr>Acierta todas las preguntas de la categoría "Todos" para desbloquear esta categoría.');
 			llamarCategoria();
 		}
 	});
@@ -185,7 +185,7 @@ function puntuacion(){
 	$('body').one('click', function(event){
 		event.stopImmediatePropagation();
 		if (contadorCorrecta == 20){
-			alert('Felicidades has desbloqueado la categoria curiosidades')
+			alert('<img src="img/Sabias.png"><hr>Felicidades has desbloqueado la categoria "curiosidades".');
 			a.removeClass('disbale');
 		}
 		$('div.conjunto').removeClass('animated bounceInRight');
@@ -305,3 +305,24 @@ function audioplay() {
 		button.textContent = ">";
 	}
 }
+
+function alertDGC(mensaje)
+{
+    var dgcTiempo=500
+    var ventanaCS='<div class="dgcAlert"><div class="dgcVentana"><div class="dgcCerrar"></div><div class="dgcMensaje">'+mensaje+'<br><div class="dgcAceptar">Aceptar</div></div></div></div>';
+    $('body').append(ventanaCS);
+    var alVentana=$('.dgcVentana').height();
+    var alNav=$(window).height();
+    var supNav=$(window).scrollTop();
+    $('.dgcAlert').css('height',$(document).height());
+    $('.dgcVentana').css('top',((alNav-alVentana)/2+supNav-100)+'px');
+    $('.dgcAlert').css('display','block');
+    $('.dgcAlert').animate({opacity:1},dgcTiempo);
+    $('.dgcCerrar,.dgcAceptar').click(function(e) {
+        $('.dgcAlert').animate({opacity:0},dgcTiempo);
+        setTimeout("$('.dgcAlert').remove()",dgcTiempo);
+    });
+}
+window.alert = function (message) {
+  alertDGC(message);
+};
